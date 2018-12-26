@@ -1,0 +1,53 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hostnames
+  namespace: default
+  labels:
+    app: hostnames
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: hostnames
+    spec:
+      hostNetwork: true
+      containers:
+      - name: hostnames
+        image: gcr.io/google_containers/serve_hostname
+        ports:
+        - containerPort: 9376
+          hostPort: 9376
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hostnames
+  namespace: default
+spec:
+  selector:
+    app: hostnames
+  ports:
+  - name: default
+    port: 80
+    targetPort: 9376
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hostnames
+  namespace: default
+  labels:
+    traffic-type: external
+  annotations:
+    traefik.frontend.rule.type: PathPrefix
+spec:
+  rules:
+  - host: hostnames.apps.stg.itshellws-k8s.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: hostnames
+          servicePort: 80

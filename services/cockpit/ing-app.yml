@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    traefik.frontend.rule.type: PathPrefix
+  generation: 1
+  name: kubernetes-cockpit
+  namespace: default
+spec:
+  rules:
+  - host: cockpit.apps.stg.itshellws-k8s.com
+    http:
+      paths:
+      - backend:
+          serviceName: kubernetes-cockpit
+          servicePort: 443
+        path: /
