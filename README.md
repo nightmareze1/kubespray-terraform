@@ -3,6 +3,7 @@
 I running Kubernetes with kubespray in Centos 7 using HAPROXY to loadbalancer Kubernetes_API,http and http traffic ports using Traefik ingress.
 
 - based in this documentation:
+
 https://blog.openshift.com/haproxy-highly-available-keepalived/
 
 https://github.com/kubernetes-sigs/kubespray/blob/master/docs/ha-mode.md
