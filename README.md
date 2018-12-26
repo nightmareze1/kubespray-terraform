@@ -10,6 +10,8 @@ https://github.com/kubernetes-sigs/kubespray/blob/master/docs/ha-mode.md
 
 https://blog.inkubate.io/install-and-manage-automatically-a-kubernetes-cluster-on-vmware-vsphere-with-terraform-and-kubespray/
 
+Regards!!!
+
 # Requirements:
 
    - Terraform v0.11.11 ( provider.vsphere v1.9.0)
