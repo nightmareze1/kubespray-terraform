@@ -3,8 +3,8 @@
     "start": "node ratings.js"
   },
   "dependencies": {
-    "httpdispatcher": "1.0.0",
-    "mongodb": "^2.2.31",
+    "httpdispatcher": "2.1.2",
+    "mongodb": "^3.2.2",
     "mysql": "^2.15.0"
   }
 }
