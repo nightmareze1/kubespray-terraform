@@ -1,0 +1,9 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "services/istio-1.0.5/samples/bookinfo/src/ratings/package.json"
+      ]
+    }
+  }
+}
